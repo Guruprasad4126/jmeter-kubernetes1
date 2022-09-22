@@ -6,7 +6,7 @@
 working_dir="`pwd`"
 
 #Get namesapce variable
-tenant=`awk '{print $NF}' "$working_dir/tenant_export"`
+tenant=`awk '{print $NF}' "$tenant_export"`
 
 jmx="$1"
 [ -n "$jmx" ] || read -p 'Enter path to the jmx file ' jmx
