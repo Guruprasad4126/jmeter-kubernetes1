@@ -11,3 +11,4 @@ spec:
   selector:
     app: jmeter-grafana
   type: LoadBalancer
+  
