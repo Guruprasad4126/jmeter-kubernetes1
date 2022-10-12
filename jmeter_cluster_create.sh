@@ -61,7 +61,7 @@ nodes=`kubectl get no | egrep -v "master|NAME" | wc -l`
 
 echo
 
-echo "Number of worker nodes on this cluster is " $nodes
+echo "Number of worker nodes on this cluster is " ${Slave_Number}
 
 echo
 
