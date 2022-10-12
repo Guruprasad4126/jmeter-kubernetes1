@@ -6,9 +6,9 @@
 working_dir="`pwd`"
 
 #Get namesapce variable
-tenant=`awk '{print $NF}' "$tenant_export"`
+tenant=${NameSpace}
 
-jmx="$1"
+jmx=${Test_Script}
 [ -n "$jmx" ] || read -p 'Enter path to the jmx file ' jmx
 
 if [ ! -f "$jmx" ];
