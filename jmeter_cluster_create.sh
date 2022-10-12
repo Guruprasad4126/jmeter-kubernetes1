@@ -23,7 +23,7 @@ kubectl get namespaces | grep -v NAME | awk '{print $1}'
 
 echo
 
-tenant="${NameSpace}"
+tenant=${NameSpace}
 if [ -z "$tenant" ]
 then
   echo "Enter the name of the new tenant unique name, this will be used to create the namespace"
