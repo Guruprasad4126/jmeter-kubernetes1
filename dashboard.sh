@@ -3,7 +3,7 @@
 working_dir=`pwd`
 
 #Get namesapce variable
-tenant=`awk '{print $NF}' tenant_export`
+tenant=${NameSpace}
 
 ## Create jmeter database automatically in Influxdb
 
