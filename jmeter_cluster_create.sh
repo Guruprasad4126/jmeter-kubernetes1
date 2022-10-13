@@ -55,7 +55,7 @@ echo "Namspace $tenant has been created"
 
 echo
 
-echo "Creating Jmeter slave nodes"
+echo "Creating Jmeter slave pods"
 
 nodes=`kubectl get no | egrep -v "master|NAME" | wc -l`
 
