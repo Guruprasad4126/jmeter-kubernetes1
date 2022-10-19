@@ -34,4 +34,4 @@ kubectl exec -i -n $tenant $master_pod -- chmod 755 /jmeter/load_test
 
 ##kubectl cp $working_dir/influxdb-jmeter-datasource.json -n $tenant $grafana_pod:/influxdb-jmeter-datasource.json
 
-kubectl exec -i -n $tenant $grafana_pod -- curl 'http://admin:admin@127.0.0.1:3000/api/datasources' -X POST -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"name":"jmeterdb","type":"influxdb","url":"http://jmeter-influxdb:8086","access":"proxy","isDefault":true,"database":"jmeter","user":"guru","password":"admin"}'
+kubectl exec -i -n $tenant $grafana_pod -- curl 'http://admin:admin@internal-acdefda6ab02d406baa30bd3e44587dd-136511828.us-east-2.elb.amazonaws.com :3000/api/datasources' -X POST -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"name":"jmeterdb","type":"influxdb","url":"http://jmeter-influxdb:8086","access":"proxy","isDefault":true,"database":"jmeter","user":"guru","password":"admin"}'
