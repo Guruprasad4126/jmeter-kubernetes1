@@ -13,6 +13,7 @@ echo "Creating Influxdb jmeter Database"
 ##influxdb_status=`kubectl get po -n $tenant | grep influxdb-jmeter | awk '{print $2}' | grep Running
 
 influxdb_pod=`kubectl get po -n $tenant | grep influxdb-jmeter | awk '{print $1}'`
+kubectl exec -ti -n $tenant $influxdb_pod -- influx -execute 'CREATE USER "guru" WITH PASSWORD 'admin' WITH ALL PRIVILEGES'
 kubectl exec -ti -n $tenant $influxdb_pod -- influx -username guru -password "admin" -execute 'CREATE DATABASE jmeter'
 kubectl exec -ti -n $tenant $influxdb_pod -- influx -username guru -password "admin" -execute 'USE DATABASE jmeter'
 
