@@ -15,7 +15,7 @@ echo "Creating Influxdb jmeter Database"
 influxdb_pod=`kubectl get po -n $tenant | grep influxdb-jmeter | awk '{print $1}'`
 kubectl exec -i -n $tenant $influxdb_pod -- influx -execute 'CREATE USER guru WITH PASSWORD 'admin' WITH ALL PRIVILEGES'
 kubectl exec -i -n $tenant $influxdb_pod -- influx -username guru -password "admin" -execute 'CREATE DATABASE jmeter'
-kubectl exec -i -n $tenant $influxdb_pod -- influx -username guru -password "admin" -execute 'USE DATABASE jmeter'
+kubectl exec -i -n $tenant $influxdb_pod -- influx -username guru -password "admin" -execute 'USE jmeter'
 
 ## Create the influxdb datasource in Grafana
 
